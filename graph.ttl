@@ -1,0 +1,134 @@
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix premis: <http://id.loc.gov/vocabulary/preservation/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/> .
+
+
+# ====== Record Set = CD-ROM
+<Record01> a rico:RecordSet ;
+    rico:title "NITRO Spielhallen Klassiker" ;
+    rico:descriptiveNote "Nostalgisch: über 100 Arcade-Klassiker!" ;
+    rico:date "1997" ;
+    rico:scopeAndContent "CD with arcade games as a supplement to a magazine" ;
+	rico:hasPublisher <Agent102> ;
+    rico:includesOrIncluded <Record02> ;
+    rico:hasInstantiation <Representation01> .
+
+
+# ====== Record
+<Record02> a rico:Record ;
+    rico:title "SOI, Spaced Out Invaders" ;
+    rico:hasAuthor <Agent101>  ;
+	rico:date "1995" ;
+	rico:isOrWasRegulatedBy <Rule01> ;
+	schema:sameAs <https://archive.org/details/SpacedOutInvaders_1020> ;
+	rico:hasInstantiation <Representation03> .
+
+# ====== Representations
+<Representation01> a rico:Instantiation, premis:Representation ;
+    rico:name "Physical CD" ;
+	premis:storedAt "physical storage" ;
+    rico:hasExtent [ a rico:InstantiationExtent ;  
+						rico:quantity "12" ;
+						rico:unitOfMeasurement "cm" ;
+                        rico:descriptiveNote "diameter" ;
+						] .
+
+<Representation02> a rico:Instantiation, premis:Representation ;
+    rico:name "ISO image of CD" ;
+    premis:wasDerivedFrom <Representation01> ;
+	premis:storedAt <File01>.
+
+<Representation03> a rico:Instantiation, premis:Representation ;
+    rico:name "Executable of SOI-Game" ;
+	premis:storedAt <File02>; 
+	premis:hasCharacteristics <Environment01> .
+
+
+# ====== File
+<File01> a premis:File ;
+	premis:storedAt "https://archive.org/download/1997DataBeckerNITROXPlosiveSharewareSpielhallenKlassiker/%281997%29%20%28Data%20Becker%29%20NITRO%20X-plosive%20Shareware%20Spielhallen%20Klassiker.7z" ;
+	premis:hasCompositionLevel "0" ;
+	premis:fixity	[ a premis:Fixity ;
+                        premis:fixityType "md5" ;
+						rdf:value "7911b0a33e472b398d76e177d1c77ef0" ;
+	] ;
+	premis:size "182.3M" ;
+	premis:orginalName "(1997) (Data Becker) NITRO X-plosive Shareware Spielhallen Klassiker.iso" ;
+	dct:format <iso> .
+
+<File02> a premis:File ;
+	premis:storedAt "file:///SOI.EXE" ;
+	premis:hasCompositionLevel "0" ;
+	premis:fixity	[ a premis:Fixity ;
+                        premis:fixityType "md5" ;
+						rdf:value "7911b0a33e472b398d76e177d1c77ef0" ;
+    ] ;                    
+	premis:size "1395545542" ;
+	premis:orginalName "SOI.EXE" ;
+	dct:format <exe> ;
+    cnt:hasContent <Content01> .
+
+# ====== Content
+<Content01> a cnt:ContentAsBase64 ;
+	cnt:bytes "UEsDBBQAAAAAADZFKFUAAAAAAAAAAAAAAAAEACAAc29pL1VUDQAHqI4ZY54iG2PDjhljdXgLAAEE9gEAAAQUAAAAUEsDBBQACAAIADZFKFUAAAAAAAAAADgBAAAOACAAX19NQUNPU1gvLl9zb2lVVA0AB6iOGWOeIhtjhCMbY3V4CwABBPYBAAAEFAAAAGNgFWNnYGJg8E1MVvAPVohQgAKQGAMnEBsxMDCyAWkgn9GCgSjgGBISBGGBdWwB4hY0JUxQcQ8GBv7k/Fy9xIKCnFS93MTkHIj8HyC2YWAQRcgVliYWJeaVZOalMrAw7Jq9aKaBupP0wh1cSy8na/0jzl3ooFDfwMDC0NrM2NDSIjXR1No5oyg/N9Xa0NjU3MDE1ELXxdjJWdfEwsBR19HC0EDXwsXQ3NTCyMDVwtKYAQBQSwcIFL5b17IAAAA4AQAAUEsDBBQACAAIAFWeaCsAAAAAAAAAAHxkAAAMACAAc29pL1BMQk0uTENSVVQNAAcC1Oo7AAAAAKiOGWN1eAsAAQT2AQAABBQAAADsvIt7E3XaP/ ..." .
+
+# ====== Environment
+<Environment01> a premis:EnvironmentCharacteristics, rico:Mechanism ;
+	rico:name "Windows 95" ;
+    rico:type "operating application" ;
+    premis:hasCharacteristic <Environment02>,  <Environment03>,  <Environment04>,  <Environment05>.
+
+<Environment02> a premis:EnvironmentCharacteristics, rico:Mechanism ;
+	rico:name "Intel x86 Processor Family";
+	premis:version "486" ;
+    rico:type "processor".
+
+<Environment03> a premis:EnvironmentCharacteristics, rico:Mechanism ;
+	rico:name "Graphic Card 256 colours" ;
+    rico:type "input/output device" .
+
+<Environment04> a premis:EnvironmentCharacteristics, rico:Mechanism ;
+	rico:name "CD-ROM-Drive" ;
+    rico:type "input/output device" .
+
+<Environment05> a premis:EnvironmentCharacteristics, rico:Mechanism ;
+	rico:name "Mouse" ;
+    rico:type "input/output device" .
+
+
+# ====== Rule
+<Rule01> a rico:Rule ;
+	rico:type "Copyright" ;
+	rico:endDate "2004" .
+
+# ====== Agent
+<Agent101> a  rico:Person ;
+	rico:name "Kurt W. Dekker" ;
+    rico:descriptiveNote "Kurt Dekker produced shareware games under his own name in the early 1990's and later marketed them under the name PLBM Games." ;
+    schema:url <https://www.mobygames.com/images/portraits/large/1526098812-2075630906.jpg> ;
+    rico:source "https://www.mobygames.com/developer/sheet/bio/developerId,11345/" .
+
+<Agent102> a  rico:CorporateBody ;
+	rico:name "Data Becker" ;
+    rico:type "Publisher" ;
+    rico:beginningDate "1981-01-07" ;
+    rico:endDate "2014-03-31 ".
+
+# ====== File Format
+<exe> a dct:FileFormat ;
+	rico:name "MS-DOS Executable" ;
+	skos:exactMatch <http://www.nationalarchives.gov.uk/pronom/fmt/13> ;
+	ebucore:hasMimeType "application/x-msdownload" .
+
+
+<iso> a dct:FileFormat ;
+	rico:name "ISO 9660 image" ;
+	skos:exactMatch <https://www.iso.org/standard/17505.html> ;
+	ebucore:hasMimeType "application/octet-stream" .
+
+
