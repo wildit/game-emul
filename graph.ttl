@@ -55,50 +55,53 @@
 	premis:hasCompositionLevel "0" ;
 	premis:fixity	[ a premis:Fixity ;
                         premis:fixityType "md5" ;
-						rdf:value "7911b0a33e472b398d76e177d1c77ef0" ;
+						rdf:value "7aaa3ba488682dfe2d439fb68af900c1" ;
 	] ;
-	premis:size "182.3M" ;
+	premis:size "191137905";
 	premis:orginalName "(1997) (Data Becker) NITRO X-plosive Shareware Spielhallen Klassiker.iso" ;
 	dct:format <iso> .
 
 <File02> a premis:File ;
-	premis:storedAt "file:///SOI.EXE" ;
+	premis:storedAt <https://github.com/wildit/game-emul/raw/main/soi.zip> ;
 	premis:hasCompositionLevel "0" ;
 	premis:fixity	[ a premis:Fixity ;
                         premis:fixityType "md5" ;
-						rdf:value "7911b0a33e472b398d76e177d1c77ef0" ;
+						rdf:value "ebb7aed126c1e3e4ef9ca29f98dc8637" ;
     ] ;                    
-	premis:size "1395545542" ;
+	premis:size "288740" ;
 	premis:orginalName "SOI.EXE" ;
 	dct:format <exe> ;
     cnt:hasContent <Content01> .
 
-# ====== Content
-<Content01> a cnt:ContentAsBase64 ;
-	cnt:bytes "UEsDBBQAAAAAADZFKFUAAAAAAAAAAAAAAAAEACAAc29pL1VUDQAHqI4ZY54iG2PDjhljdXgLAAEE9gEAAAQUAAAAUEsDBBQACAAIADZFKFUAAAAAAAAAADgBAAAOACAAX19NQUNPU1gvLl9zb2lVVA0AB6iOGWOeIhtjhCMbY3V4CwABBPYBAAAEFAAAAGNgFWNnYGJg8E1MVvAPVohQgAKQGAMnEBsxMDCyAWkgn9GCgSjgGBISBGGBdWwB4hY0JUxQcQ8GBv7k/Fy9xIKCnFS93MTkHIj8HyC2YWAQRcgVliYWJeaVZOalMrAw7Jq9aKaBupP0wh1cSy8na/0jzl3ooFDfwMDC0NrM2NDSIjXR1No5oyg/N9Xa0NjU3MDE1ELXxdjJWdfEwsBR19HC0EDXwsXQ3NTCyMDVwtKYAQBQSwcIFL5b17IAAAA4AQAAUEsDBBQACAAIAFWeaCsAAAAAAAAAAHxkAAAMACAAc29pL1BMQk0uTENSVVQNAAcC1Oo7AAAAAKiOGWN1eAsAAQT2AQAABBQAAADsvIt7E3XaP/ ..." .
-
 # ====== Environment
 <Environment01> a premis:EnvironmentCharacteristics, rico:Mechanism ;
-	rico:name "Windows 95" ;
-    rico:type "operating application" ;
+	premis:environmentName "MS-DOS" ;
+	rico:descriptiveNote "Microsoft's discontinued operating system" ;
+    premis:environmentFunctionType "operating system" ;
+	schema:sameAs <https://www.wikidata.org/wiki/Q47604> ;
     premis:hasCharacteristic <Environment02>,  <Environment03>,  <Environment04>,  <Environment05>.
 
 <Environment02> a premis:EnvironmentCharacteristics, rico:Mechanism ;
-	rico:name "Intel x86 Processor Family";
-	premis:version "486" ;
-    rico:type "processor".
+	premis:environmentName "Intel x86 platform";
+	rico:descriptiveNote "16-bit central processing unit" ;
+    premis:environmentFunctionType "processor" ;
+	schema:sameAs <https://www.wikidata.org/wiki/Q207539> .
 
 <Environment03> a premis:EnvironmentCharacteristics, rico:Mechanism ;
-	rico:name "Graphic Card 256 colours" ;
-    rico:type "input/output device" .
+	premis:environmentName "Graphic Card" ;
+    premis:environmentFunctionType "input/output device" ;
+	premis:environmentDesignationNote "256 colours" ;
+	schema:sameAs <https://www.wikidata.org/wiki/Q4308> .
 
 <Environment04> a premis:EnvironmentCharacteristics, rico:Mechanism ;
-	rico:name "CD-ROM-Drive" ;
-    rico:type "input/output device" .
+	premis:environmentName "CD-ROM-Drive" ;
+    premis:environmentFunctionType "input/output device" ;
+	schema:sameAs <https://www.wikidata.org/wiki/Q3228765> .
 
 <Environment05> a premis:EnvironmentCharacteristics, rico:Mechanism ;
-	rico:name "Mouse" ;
-    rico:type "input/output device" .
+	premis:environmentName "Mouse" ;
+    premis:environmentFunctionType "pointing device" ;
+	schmea:sameAs <https://www.wikidata.org/wiki/Q7987> .
 
 
 # ====== Rule
