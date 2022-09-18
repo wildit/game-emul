@@ -51,7 +51,7 @@
 
 # ====== File
 <File01> a premis:File ;
-	premis:storedAt "https://archive.org/download/1997DataBeckerNITROXPlosiveSharewareSpielhallenKlassiker/%281997%29%20%28Data%20Becker%29%20NITRO%20X-plosive%20Shareware%20Spielhallen%20Klassiker.7z" ;
+	premis:storedAt <https://archive.org/download/1997DataBeckerNITROXPlosiveSharewareSpielhallenKlassiker/%281997%29%20%28Data%20Becker%29%20NITRO%20X-plosive%20Shareware%20Spielhallen%20Klassiker.7z> ;
 	premis:hasCompositionLevel "0" ;
 	premis:fixity	[ a premis:Fixity ;
                         premis:fixityType "md5" ;
@@ -114,7 +114,7 @@
 	rico:name "Kurt W. Dekker" ;
     rico:descriptiveNote "Kurt Dekker produced shareware games under his own name in the early 1990's and later marketed them under the name PLBM Games." ;
     schema:url <https://www.mobygames.com/images/portraits/large/1526098812-2075630906.jpg> ;
-    rico:source "https://www.mobygames.com/developer/sheet/bio/developerId,11345/" .
+    rico:source <https://www.mobygames.com/developer/sheet/bio/developerId,11345/> .
 
 <Agent102> a  rico:CorporateBody ;
 	rico:name "Data Becker" ;
